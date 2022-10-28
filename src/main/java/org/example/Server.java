@@ -28,6 +28,7 @@ public class Server {
                     if (actualCity == null) {
 
                         out.println("???");
+
                         newCity = in.readLine();
                         out.println("OK");
                         actualCity = newCity;
@@ -36,14 +37,19 @@ public class Server {
                     } else {
                         out.println("Введите город,который начинается на последнюю букву: " + actualCity);
                         newCity = in.readLine();
+
                         char letterLast = actualCity.toLowerCase().charAt(actualCity.length() - 1);
                         char letterFirst = newCity.toLowerCase().charAt(0);
 
                         if (letterLast == letterFirst) {
-                            out.println("ОК");
+                            System.out.println(letterLast + " d " + letterFirst);
+                            out.println("OK");
                             newCity = actualCity;
-                        } else {
-                            out.println("NOT ОК");
+                            System.out.println("Текущее название города: " + actualCity);
+                        }
+                        if (letterLast != letterFirst) {
+                            out.println("NOT OK");
+                            System.out.println(letterLast + letterFirst);
                         }
                     }
                 }

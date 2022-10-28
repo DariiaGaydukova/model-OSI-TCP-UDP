@@ -21,7 +21,9 @@ public class Client {
                     PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);) {
 
                 String answerServer = in.readLine();
+
                 System.out.println(answerServer);
+
 
                 Scanner scan = new Scanner(System.in);
                 String clientCity = scan.nextLine();
@@ -32,7 +34,8 @@ public class Client {
 
                 if (answerServer.equals("OK")) {
                     System.out.println("Ваш ход засчитан");
-                } else {
+                }
+                if (answerServer.equals("NOT OK")) {
                     System.out.println("Ваш ход не засчитан, попытайтесь снова");
                 }
 
